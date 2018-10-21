@@ -1,0 +1,1 @@
+# next-with-typescript-redux-wrapper
