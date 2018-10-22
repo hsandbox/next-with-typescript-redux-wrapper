@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addCount } from "../store";
+import { addCount } from "../actions";
 
 class AddCount extends Component {
   add = () => {

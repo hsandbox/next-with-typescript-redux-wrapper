@@ -1,6 +1,6 @@
 import React from "react";
 import { bindActionCreators } from "redux";
-import { startClock, addCount, serverRenderClock } from "../store";
+import { startClock, addCount, serverRenderClock } from "../actions";
 import { connect } from "react-redux";
 import Page from "../components/Page";
 
