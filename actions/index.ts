@@ -1,7 +1,7 @@
-export const actionTypes = {
-  ADD: "ADD",
-  TICK: "TICK"
-};
+export enum actionTypes {
+  ADD = "ADD",
+  TICK = "TICK"
+}
 
 // ACTIONS
 export const serverRenderClock = isServer => dispatch => {

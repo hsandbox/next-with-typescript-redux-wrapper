@@ -4,23 +4,30 @@ import { startClock, addCount, serverRenderClock } from "../actions";
 import { connect } from "react-redux";
 import Page from "../components/Page";
 
-class Counter extends React.Component {
+interface Props {
+  startClock: Function;
+}
+
+class Counter extends React.Component<Props> {
   static getInitialProps({ store, isServer }) {
     store.dispatch(serverRenderClock(isServer));
     store.dispatch(addCount());
+
     return { isServer };
   }
 
-  componentDidMount() {
+  private timer;
+
+  public componentDidMount() {
     this.timer = this.props.startClock();
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     clearInterval(this.timer);
   }
 
-  render() {
-    return <Page title="Other Page" linkTo="/" />;
+  public render() {
+    return <Page title="Index Page" linkTo="/other" />;
   }
 }
 

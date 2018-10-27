@@ -4,12 +4,17 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addCount } from "../actions";
 
-class AddCount extends Component {
-  add = () => {
+interface Props {
+  addCount: () => void;
+  count: number;
+}
+
+class AddCount extends Component<Props> {
+  private add = () => {
     this.props.addCount();
   };
 
-  render() {
+  public render() {
     const { count } = this.props;
     return (
       <div>
